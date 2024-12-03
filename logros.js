@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("logros-container");
     const juegoTitulo = document.getElementById("juego-titulo");
 
-    fetch(`http://localhost:8080/api/juegos/${juegoId}`)
+    fetch(`https://backend-production-4746.up.railway.app/api/juegos/${juegoId}`)
         .then(response => response.json())
         .then(juego => {
             juegoTitulo.textContent = juego.titulo;
         });
 
-    fetch(`http://localhost:8080/api/logros?juegoId=${juegoId}`)
+    fetch(`https://backend-production-4746.up.railway.app/api/logros?juegoId=${juegoId}`)
         .then(response => response.json())
         .then(logros => {
             logros.forEach(logro => {

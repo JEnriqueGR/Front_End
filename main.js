@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const container = document.getElementById("juegos-container");
 
-    fetch("http://localhost:8080/api/juegos")
+    fetch("https://backend-production-4746.up.railway.app/api/juegos")
         .then(response => response.json())
         .then(juegos => {
             juegos.forEach(juego => {

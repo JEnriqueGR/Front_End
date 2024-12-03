@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const logroId = urlParams.get("logroId");
     const detalle = document.getElementById("logro-detalle");
 
-    fetch(`http://localhost:8080/api/logros/${logroId}`)
+    fetch(`https://backend-production-4746.up.railway.app/api/logros/${logroId}`)
         .then(response => response.json())
         .then(logro => {
             detalle.innerHTML = `
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function actualizarEstado(logroId, nuevoEstado) {
-    fetch(`http://localhost:8080/api/logros/${logroId}`, {
+    fetch(`https://backend-production-4746.up.railway.app/api/logros/${logroId}`, {
         method: "PUT",
         headers: {
             "Content-Type": "application/json",
