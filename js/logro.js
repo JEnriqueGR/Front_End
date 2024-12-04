@@ -2,7 +2,7 @@ const detalleLogro = document.getElementById('detalle-logro');
 const logroId = new URLSearchParams(window.location.search).get('logroId');
 
 async function cargarLogro() {
-  const respuesta = await fetch(`http://localhost:8080/api/logros/${logroId}`);
+  const respuesta = await fetch(`https://backend-production-4746.up.railway.app/logros/${logroId}`);
   const logro = await respuesta.json();
   mostrarDetalleLogro(logro);
 }
