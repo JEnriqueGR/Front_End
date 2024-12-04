@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e3f2fd;
+  }
+  
+  header {
+    text-align: center;
+    padding: 20px;
+    background-color: #0288d1;
+    color: white;
+  }
+  
+  #logros-lista {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .logro-card {
+    width: 250px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 10px;
+    background-color: white;
+    text-align: center;
+  }
+  
+  .logro-card img {
+    width: 50px;
+    cursor: pointer;
+  }
+  
