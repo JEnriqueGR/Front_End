@@ -1,8 +1,22 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e3f2fd;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #0288d1;
+    color: white;
+}
+
 #logros-lista {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    overflow-x: auto;
     gap: 20px;
+    padding: 20px;
 }
 
 .logro-card {
@@ -12,12 +26,15 @@
     padding: 10px;
     background-color: white;
     text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 .logro-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 8px;
+    width: 50px;
+    cursor: pointer;
+}
+
+.logro-card h3 {
+    font-size: 1rem;
+    margin-top: 10px;
 }
