@@ -2,38 +2,86 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
-  }
-  
-  header {
-    text-align: center;
-    padding: 20px;
-    background-color: #6200ea;
+    background-color: #121212;
     color: white;
-  }
-  
-  #filtros {
-    margin: 20px;
+}
+
+header {
     text-align: center;
-  }
-  
-  #juegos-lista {
+    background-color: #1e1e1e;
+    padding: 20px;
+    border-bottom: 2px solid #6200ea;
+}
+
+.banner {
+    max-width: 100%;
+    height: auto;
+}
+
+main {
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #bb86fc;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#juegos-lista {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     gap: 20px;
-  }
-  
-  .juego-card {
-    width: 200px;
-    border: 1px solid #ccc;
+    align-items: center;
+}
+
+.juego-card {
+    width: 90%;
+    max-width: 800px;
+    background-color: #1e1e1e;
+    border: 2px solid #292929;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.juego-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.juego-info {
+    flex: 1;
+    margin-left: 20px;
+}
+
+.juego-info h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: #bb86fc;
+}
+
+.juego-info p {
+    font-size: 1rem;
+    margin: 10px 0 0;
+}
+
+.consultar-btn {
+    padding: 10px 20px;
+    background-color: #bb86fc;
+    color: white;
+    border: none;
     border-radius: 8px;
-    padding: 10px;
-    text-align: center;
-    background-color: white;
-  }
-  
-  .juego-card h2 {
-    font-size: 1.2rem;
-  }
-  
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.consultar-btn:hover {
+    background-color: #6200ea;
+}
