@@ -45,8 +45,10 @@ fetch('https://backend-production-4746.up.railway.app/juegos')
               <div class="botones">
                 <button onclick="verLogros(${juego.id})">Consultar logros</button>
               </div>
+              <div>
+              ${plataformaImg}
+              </div>
             </div>
-            ${plataformaImg}
           `;
 
           // Agregar la tarjeta del juego a la lista
