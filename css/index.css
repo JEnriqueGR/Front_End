@@ -2,14 +2,15 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #121212; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
   }
   
   header {
     text-align: center;
     padding: 20px;
-    background-color: #6200ea;
-    color: white;
+    background-color: #1f1f1f; /* Fondo más oscuro */
+    color: #ffffff;
   }
   
   #filtros {
@@ -19,23 +20,25 @@ body {
   
   #juegos-lista {
     display: flex;
-    flex-direction: row;  /* Cambiado a fila para que las tarjetas sean horizontales */
-    flex-wrap: wrap;  /* Permite que las tarjetas se ajusten en una nueva fila si no caben */
-    justify-content: flex-start;  /* Alinea las tarjetas al principio de la fila */
-    gap: 20px;  /* Espacio entre las tarjetas */
+    flex-direction: column; /* Columnas para alinear como la imagen */
+    gap: 20px;
     padding: 20px;
   }
   
   .juego-card {
-    width: 250px;  /* El ancho de la tarjeta del juego */
-    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: row; /* Diseño horizontal para cada tarjeta */
+    align-items: center; /* Centrar el contenido verticalmente */
+    border: 1px solid #333333;
     border-radius: 8px;
     padding: 10px;
-    text-align: center;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    background-color: #1f1f1f;
+  }
+  
+  .juego-card img {
+    width: 80px; /* Tamaño ajustado para las portadas */
+    height: auto;
+    margin-right: 20px;
   }
   
   .juego-card h3 {
@@ -43,22 +46,14 @@ body {
     margin-bottom: 10px;
   }
   
-  .juego-card img {
-    width: 100%;
-    height: auto;
-    margin-bottom: 10px;
-  }
-  
-  .plataforma {
-    width: 30px;
-    height: 30px;
-    margin: 5px 0;
+  .juego-card .contenido {
+    flex-grow: 1;
   }
   
   .barra-progreso {
     width: 100%;
     height: 10px;
-    background-color: #e0e0e0;
+    background-color: #333333; /* Fondo de la barra */
     border-radius: 5px;
     overflow: hidden;
     margin: 10px 0;
@@ -66,7 +61,31 @@ body {
   
   .progreso {
     height: 100%;
-    background-color: #6200ea;
-    width: 0%;  /* Se ajusta con JavaScript */
+    background-color: #76ff03; /* Color verde como en la imagen */
+    width: 75%; /* Ajustar dinámicamente con JavaScript */
+  }
+  
+  .botones {
+    margin-top: 10px;
+  }
+  
+  .botones button {
+    background-color: #6200ea; /* Botón con color púrpura */
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+  }
+  
+  .botones button:hover {
+    background-color: #3700b3; /* Color más oscuro al pasar el mouse */
+  }
+  
+  .plataforma {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
   }
   
