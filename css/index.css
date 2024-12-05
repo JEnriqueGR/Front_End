@@ -25,16 +25,17 @@ header {
 .juego-card {
     display: flex;
     flex-direction: row; /* Diseño horizontal para la tarjeta */
-    align-items: flex-start; /* Alinear elementos al inicio verticalmente */
+    align-items: center; /* Alinear verticalmente */
     border: 1px solid #333333;
     border-radius: 8px;
     padding: 20px;
     background-color: #1f1f1f;
     height: auto; /* Ajustar altura dinámica */
+    position: relative; /* Para posicionar la imagen de plataforma */
 }
 
 .juego-card img {
-    width: 120px; /* Imagen más grande */
+    width: 120px; /* Imagen del juego más grande */
     height: auto;
     margin-right: 20px;
 }
@@ -84,4 +85,14 @@ header {
 
 .botones button:hover {
     background-color: #3700b3; /* Color más oscuro al pasar el mouse */
+}
+
+/* Imagen de la plataforma */
+.juego-card .plataforma {
+    position: absolute;
+    right: 20px; /* Ubicada al extremo derecho */
+    top: 50%; /* Centrando verticalmente */
+    transform: translateY(-50%);
+    width: 40px;
+    height: 40px;
 }

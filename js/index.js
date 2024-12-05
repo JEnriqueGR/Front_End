@@ -39,7 +39,6 @@ fetch('https://backend-production-4746.up.railway.app/juegos')
             <img src="${juego.imagen}" alt="${juego.titulo}" />
             <div class="contenido">
               <h3>${juego.titulo}</h3>
-              ${plataformaImg}
               <div class="barra-progreso">
                 <div class="progreso" style="width: ${porcentaje}%;"></div>
               </div>
@@ -47,6 +46,7 @@ fetch('https://backend-production-4746.up.railway.app/juegos')
                 <button onclick="verLogros(${juego.id})">Consultar logros</button>
               </div>
             </div>
+            ${plataformaImg}
           `;
 
           // Agregar la tarjeta del juego a la lista
