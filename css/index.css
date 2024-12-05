@@ -31,12 +31,13 @@ body {
     align-items: center; /* Centrar el contenido verticalmente */
     border: 1px solid #333333;
     border-radius: 8px;
-    padding: 10px;
+    padding: 20px; /* Más espacio interno */
     background-color: #1f1f1f;
+    height: 200px; /* Incrementar la altura de las tarjetas */
   }
   
   .juego-card img {
-    width: 80px; /* Tamaño ajustado para las portadas */
+    width: 120px; /* Tamaño más grande para las imágenes */
     height: auto;
     margin-right: 20px;
   }
@@ -52,7 +53,7 @@ body {
   
   .barra-progreso {
     width: 100%;
-    height: 10px;
+    height: 12px; /* Un poco más alta */
     background-color: #333333; /* Fondo de la barra */
     border-radius: 5px;
     overflow: hidden;
