@@ -1,96 +1,87 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #121212; /* Fondo oscuro */
     color: #ffffff; /* Texto blanco */
-  }
-  
-  header {
+}
+
+header {
     text-align: center;
     padding: 20px;
     background-color: #1f1f1f; /* Fondo más oscuro */
     color: #ffffff;
-  }
-  
-  #filtros {
-    margin: 20px;
-    text-align: center;
-  }
-  
-  #juegos-lista {
+}
+
+#juegos-lista {
     display: flex;
     flex-direction: column; /* Columnas para alinear como la imagen */
     gap: 20px;
     padding: 20px;
-  }
-  
-  .juego-card {
+}
+
+/* Estilo de las tarjetas */
+.juego-card {
     display: flex;
-    flex-direction: row; /* Diseño horizontal para cada tarjeta */
-    align-items: center; /* Centrar el contenido verticalmente */
+    flex-direction: row; /* Diseño horizontal para la tarjeta */
+    align-items: flex-start; /* Alinear elementos al inicio verticalmente */
     border: 1px solid #333333;
     border-radius: 8px;
-    padding: 20px; /* Más espacio interno */
+    padding: 20px;
     background-color: #1f1f1f;
-    height: 220px; /* Ajustar altura para espacio adicional */
-  }
-  
-  .juego-card img {
-    width: 120px; /* Tamaño más grande para las imágenes */
+    height: auto; /* Ajustar altura dinámica */
+}
+
+.juego-card img {
+    width: 120px; /* Imagen más grande */
     height: auto;
     margin-right: 20px;
-  }
-  
-  .juego-card .contenido {
+}
+
+/* Contenedor del contenido textual y barra */
+.juego-card .contenido {
     display: flex;
-    flex-direction: column; /* Alinear el contenido en columna */
-    justify-content: space-between; /* Separar los elementos */
+    flex-direction: column; /* Alinear contenido verticalmente */
+    gap: 10px; /* Espaciado entre elementos */
     flex-grow: 1;
-  }
-  
-  .juego-card h3 {
+}
+
+/* Título del juego */
+.juego-card h3 {
     font-size: 1.2rem;
-    margin-bottom: 5px;
-  }
-  
-  .barra-progreso {
+    margin: 0; /* Eliminar márgenes */
+}
+
+/* Barra de progreso */
+.barra-progreso {
     width: 100%;
-    height: 12px; /* Un poco más alta */
+    height: 12px; /* Altura de la barra */
     background-color: #333333; /* Fondo de la barra */
     border-radius: 5px;
     overflow: hidden;
-    margin: 10px 0;
-  }
-  
-  .progreso {
+}
+
+.progreso {
     height: 100%;
-    background-color: #76ff03; /* Color verde como en la imagen */
-    width: 75%; /* Ajustar dinámicamente con JavaScript */
-  }
-  
-  .botones {
-    margin-top: 10px;
-    text-align: right; /* Alinear los botones a la derecha */
-  }
-  
-  .botones button {
-    background-color: #6200ea; /* Botón con color púrpura */
+    background-color: #76ff03; /* Color verde */
+}
+
+/* Botón */
+.botones {
+    text-align: left; /* Alinear el botón a la izquierda */
+}
+
+.botones button {
+    background-color: #6200ea; /* Botón púrpura */
     color: #ffffff;
     border: none;
     padding: 8px 12px;
     border-radius: 4px;
     font-size: 0.9rem;
     cursor: pointer;
-  }
-  
-  .botones button:hover {
+}
+
+.botones button:hover {
     background-color: #3700b3; /* Color más oscuro al pasar el mouse */
-  }
-  
-  .plataforma {
-    width: 30px;
-    height: 30px;
-    margin: 5px;
-  }
-  
+}
