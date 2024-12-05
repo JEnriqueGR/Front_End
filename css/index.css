@@ -3,66 +3,70 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f9;
-}
-
-header {
+  }
+  
+  header {
     text-align: center;
     padding: 20px;
     background-color: #6200ea;
     color: white;
-}
-
-#filtros {
+  }
+  
+  #filtros {
     margin: 20px;
     text-align: center;
-}
-
-#juegos-lista {
+  }
+  
+  #juegos-lista {
     display: flex;
-    overflow-x: auto;
+    flex-direction: row;  /* Cambiado a fila para que las tarjetas sean horizontales */
+    flex-wrap: wrap;  /* Permite que las tarjetas se ajusten en una nueva fila si no caben */
+    justify-content: flex-start;  /* Alinea las tarjetas al principio de la fila */
+    gap: 20px;  /* Espacio entre las tarjetas */
     padding: 20px;
-    gap: 20px;
-}
-
-.juego-card {
-    width: 250px;
+  }
+  
+  .juego-card {
+    width: 250px;  /* El ancho de la tarjeta del juego */
     border: 1px solid #ccc;
     border-radius: 8px;
     padding: 10px;
     text-align: center;
     background-color: white;
-    position: relative;
-    box-sizing: border-box;
-}
-
-.juego-card img {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .juego-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .juego-card img {
     width: 100%;
     height: auto;
-    border-radius: 8px;
-}
-
-.juego-card h2 {
-    font-size: 1.2rem;
-}
-
-.plataforma {
+    margin-bottom: 10px;
+  }
+  
+  .plataforma {
     width: 30px;
     height: 30px;
-    margin-top: 10px;
-}
-
-.barra-progreso {
+    margin: 5px 0;
+  }
+  
+  .barra-progreso {
     width: 100%;
-    height: 8px;
-    background-color: #ccc;
-    margin-top: 10px;
-    border-radius: 4px;
-    position: absolute;
-    bottom: 10px;
-}
-
-.barra-progreso .progreso {
+    height: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 10px 0;
+  }
+  
+  .progreso {
     height: 100%;
     background-color: #6200ea;
-    border-radius: 4px;
-}
+    width: 0%;  /* Se ajusta con JavaScript */
+  }
+  
