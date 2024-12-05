@@ -33,7 +33,7 @@ body {
     border-radius: 8px;
     padding: 20px; /* Más espacio interno */
     background-color: #1f1f1f;
-    height: 200px; /* Incrementar la altura de las tarjetas */
+    height: 220px; /* Ajustar altura para espacio adicional */
   }
   
   .juego-card img {
@@ -42,13 +42,16 @@ body {
     margin-right: 20px;
   }
   
-  .juego-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
+  .juego-card .contenido {
+    display: flex;
+    flex-direction: column; /* Alinear el contenido en columna */
+    justify-content: space-between; /* Separar los elementos */
+    flex-grow: 1;
   }
   
-  .juego-card .contenido {
-    flex-grow: 1;
+  .juego-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
   }
   
   .barra-progreso {
@@ -68,6 +71,7 @@ body {
   
   .botones {
     margin-top: 10px;
+    text-align: right; /* Alinear los botones a la derecha */
   }
   
   .botones button {
