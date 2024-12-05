@@ -91,7 +91,7 @@ header {
 .juego-card .plataforma {
     position: absolute;
     right: 20px; /* Ubicada al extremo derecho */
-    top: 30%; /* Centrando verticalmente */
+    top: 70%; /* Centrando verticalmente */
     transform: translateY(-50%);
     width: 40px;
     height: 40px;
