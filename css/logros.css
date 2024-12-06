@@ -1,34 +1,49 @@
 body {
     font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #ffffff;
     margin: 0;
     padding: 0;
-    background-color: #121212; /* Fondo oscuro */
-    color: white;
 }
 
 header {
-    text-align: center;
-    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: #1f1f1f;
-    color: white;
+    padding: 10px 0;
+    border-bottom: 2px solid #333333;
+}
+
+header img {
+    max-width: 100%;
+    height: auto;
+    width: 150px;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0;
 }
 
 #logros-lista {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
 }
 
 .logro-card {
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     border: 1px solid #333333;
     border-radius: 8px;
     padding: 20px;
     background-color: #1f1f1f;
+    gap: 20px;
 }
 
 .logro-card img {
@@ -38,20 +53,26 @@ header {
     cursor: pointer;
 }
 
-.logro-card .contenido {
+.contenido {
     flex-grow: 1;
-    padding: 0 20px;
 }
 
-.logro-card h3 {
+.contenido h3 {
     margin: 0;
     font-size: 1.5rem;
 }
 
-.logro-card p {
+.contenido p {
     margin: 5px 0 0;
     font-size: 1rem;
     color: #bbbbbb;
+}
+
+.derecha {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
 .dificultad {
@@ -81,6 +102,8 @@ header {
     padding: 10px 15px;
     border-radius: 5px;
     cursor: pointer;
+    width: 100px;
+    text-align: center;
 }
 
 .detalles-btn:hover {
