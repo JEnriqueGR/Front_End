@@ -2,10 +2,19 @@ const detalleLogro = document.getElementById('detalle-logro');
 const logroId = new URLSearchParams(window.location.search).get('logroId');
 
 async function cargarLogro() {
-  const respuesta = await fetch(`https://backend-production-4746.up.railway.app/logros/${logroId}`);
-  const logro = await respuesta.json();
-  mostrarDetalleLogro(logro);
+  try {
+    const respuesta = await fetch(`https://backend-production-4746.up.railway.app/logros/${logroId}`);
+    if (!respuesta.ok) {
+      throw new Error(`Error al obtener el logro: ${respuesta.status}`);
+    }
+    const logro = await respuesta.json();
+    mostrarDetalleLogro(logro);
+  } catch (error) {
+    console.error(error);
+    detalleLogro.innerHTML = `<p>Error al cargar el logro. Inténtalo más tarde.</p>`;
+  }
 }
+
 
 function mostrarDetalleLogro(logro) {
   detalleLogro.innerHTML = `
