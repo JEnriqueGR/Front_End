@@ -2,39 +2,87 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #e3f2fd;
+    background-color: #121212; /* Fondo oscuro */
+    color: white;
 }
 
 header {
     text-align: center;
     padding: 20px;
-    background-color: #0288d1;
+    background-color: #1f1f1f;
     color: white;
 }
 
 #logros-lista {
     display: flex;
-    overflow-x: auto;
+    flex-direction: column;
     gap: 20px;
     padding: 20px;
 }
 
 .logro-card {
-    width: 250px;
-    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #333333;
     border-radius: 8px;
-    padding: 10px;
-    background-color: white;
-    text-align: center;
-    box-sizing: border-box;
+    padding: 20px;
+    background-color: #1f1f1f;
 }
 
 .logro-card img {
-    width: 50px;
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
     cursor: pointer;
 }
 
+.logro-card .contenido {
+    flex-grow: 1;
+    padding: 0 20px;
+}
+
 .logro-card h3 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+.logro-card p {
+    margin: 5px 0 0;
     font-size: 1rem;
-    margin-top: 10px;
+    color: #bbbbbb;
+}
+
+.dificultad {
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    color: white;
+    font-weight: bold;
+}
+
+.dificultad.dificil {
+    background-color: #e53935; /* Rojo */
+}
+
+.dificultad.normal {
+    background-color: #1e88e5; /* Azul */
+}
+
+.dificultad.facil {
+    background-color: #43a047; /* Verde */
+}
+
+.detalles-btn {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.detalles-btn:hover {
+    background-color: #3700b3;
 }
