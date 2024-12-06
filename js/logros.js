@@ -23,9 +23,9 @@ fetch(`https://backend-production-4746.up.railway.app/logros/${juegoId}`)
           <p>${logro.descripcion}</p>
         </div>
         <div class="derecha">
+          <img src="${logro.imagen}" alt="Imagen del logro">
           <span class="dificultad ${dificultadClase}">${logro.dificultad}</span>
           <button class="detalles-btn" onclick="verDetalles(${logro.id})">Detalles</button>
-          <img src="${logro.imagen}" alt="Imagen del logro">
           <img src="${estadoIcono}" alt="Estado del logro" onclick="cambiarEstado(${logro.id}, ${!logro.estado})">
         </div>
       `;
@@ -51,7 +51,7 @@ function cambiarEstado(logroId, nuevoEstado) {
       return response.json();
     })
     .then(() => {
-      // Actualizar directamente el estado en lugar de recargar la página
+      // Actualizar directamente el estado sin recargar la página
       const iconoEstado = document.querySelector(`img[onclick="cambiarEstado(${logroId}, ${nuevoEstado})"]`);
       iconoEstado.src = nuevoEstado
         ? 'https://www.iconpacks.net/icons/2/free-check-icon-3278-thumb.png'
