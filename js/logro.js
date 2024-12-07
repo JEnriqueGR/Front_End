@@ -1,14 +1,10 @@
-// Asegúrate de que el elemento existe en la página
 const detalleLogro = document.getElementById('detalle-logro');
-
-// Obtener el ID del logro desde la URL
 const params = new URLSearchParams(window.location.search);
-const logroId = params.get('logroId'); // Aquí obtienes el valor de logroId
+const logroId = params.get('logroId');
 
-// Asegúrate de que el logroId no sea null o undefined
-if (logroId === null || logroId === undefined) {
-    console.error('No se ha proporcionado un logroId en la URL');
-    // Puedes redirigir o mostrar un mensaje de error en la página
+if (!logroId) {
+    console.error('logroId no está presente en la URL');
+    detalleLogro.innerHTML = '<p>Error: No se ha especificado un logro.</p>';
 } else {
     async function cargarLogro() {
         try {
@@ -30,7 +26,7 @@ if (logroId === null || logroId === undefined) {
             <img src="${logro.imagen}" alt="${logro.nombre}">
             <p><strong>Descripción:</strong> ${logro.descripcion}</p>
             <p><strong>Estado:</strong> ${logro.estado ? 'Completado' : 'Pendiente'}</p>
-            <p><strong>Detalles:</strong> ${logro.detalles || 'No hay detalles disponibles'}</p> <!-- Muestra los detalles si están disponibles -->
+            <p><strong>Detalles:</strong> ${logro.detalles || 'No hay detalles disponibles'}</p>
             <button onclick="volverAtras()">Volver</button>
         `;
     }
@@ -41,3 +37,4 @@ if (logroId === null || logroId === undefined) {
 
     cargarLogro();
 }
+
