@@ -1,8 +1,15 @@
 const detalleLogro = document.getElementById('detalle-logro');
-const logroId = new URLSearchParams(window.location.search).get('logroId');  // Obtener el logroId de la URL
+
+// Obtener el logroId de la URL
+const logroId = new URLSearchParams(window.location.search).get('logroId');
 
 // Función para cargar el detalle del logro
 async function cargarLogro() {
+    if (!logroId) {
+        detalleLogro.innerHTML = `<p>No se ha proporcionado un ID de logro válido.</p>`;
+        return;
+    }
+
     try {
         // Realizar la solicitud al backend con el logroId
         const respuesta = await fetch(`https://backend-production-4746.up.railway.app/logros/${logroId}`);
