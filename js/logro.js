@@ -11,7 +11,7 @@ if (!logroId) {
 }
 
 // Obtener los detalles del logro desde el backend y mostrar en la página
-fetch(`https://backend-production-4746.up.railway.app/logro/${logroId}`)
+fetch(`https://backend-production-4746.up.railway.app/logros/logro/${logroId}`)
     .then(response => {
         if (!response.ok) {
             throw new Error("Error al obtener los detalles del logro.");
@@ -22,8 +22,8 @@ fetch(`https://backend-production-4746.up.railway.app/logro/${logroId}`)
         const detalleLogroDiv = document.getElementById('detalle-logro');
 
         const logroHTML = `
-            <img src="${logro.imagen}" alt="Imagen del logro">
-            <h1>${logro.nombre}</h1>
+            <img src="${logro.imagen}" alt="Imagen del logro" class="logro-imagen">
+            <h1 class="logro-nombre">${logro.nombre}</h1>
             <p><strong>Descripción:</strong> ${logro.descripcion}</p>
             <p class="dificultad"><strong>Dificultad:</strong> ${logro.dificultad}</p>
             <div class="detalle"><strong>Detalles:</strong> ${logro.detalle}</div>
