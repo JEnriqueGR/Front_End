@@ -15,11 +15,10 @@ async function cargarLogro() {
   }
 }
 
-
 function mostrarDetalleLogro(logro) {
   detalleLogro.innerHTML = `
     <h2>${logro.nombre}</h2>
-    <img src="${logro.estado ? 'img/completado.png' : 'img/pendiente.png'}" alt="${logro.estado ? 'Completado' : 'Pendiente'}">
+    <img src="${logro.imagen}" alt="${logro.nombre}">
     <p><strong>Descripción:</strong> ${logro.descripcion}</p>
     <p><strong>Estado:</strong> ${logro.estado ? 'Completado' : 'Pendiente'}</p>
     <button onclick="volverAtras()">Volver</button>
@@ -30,14 +29,4 @@ function volverAtras() {
   window.history.back();
 }
 
-function mostrarDetalleLogro(logro) {
-    detalleLogro.innerHTML = `
-      <h2>${logro.nombre}</h2>
-      <img src="${logro.imagen}" alt="${logro.nombre}">
-      <p><strong>Descripción:</strong> ${logro.descripcion}</p>
-      <p><strong>Estado:</strong> ${logro.estado ? 'Completado' : 'Pendiente'}</p>
-      <button onclick="volverAtras()">Volver</button>
-    `;
-  }
-  
 cargarLogro();
