@@ -2,22 +2,38 @@
 const params = new URLSearchParams(window.location.search);
 const logroId = params.get('logroId');
 
+// Validar que logroId esté presente en la URL
+if (!logroId) {
+    document.getElementById('detalle-logro').innerHTML = `
+        <p>Error: No se especificó un logro válido.</p>
+    `;
+    throw new Error("Logro ID no especificado.");
+}
+
 // Obtener los detalles del logro desde el backend y mostrar en la página
 fetch(`https://backend-production-4746.up.railway.app/logro/${logroId}`)
-  .then(response => response.json())
-  .then(logro => {
-    // Crear el HTML para mostrar los detalles del logro
-    const detalleLogroDiv = document.getElementById('detalle-logro');
+    .then(response => {
+        if (!response.ok) {
+            throw new Error("Error al obtener los detalles del logro.");
+        }
+        return response.json();
+    })
+    .then(logro => {
+        const detalleLogroDiv = document.getElementById('detalle-logro');
 
-    const logroHTML = `
-        <img src="${logro.imagen}" alt="Imagen del logro">
-        <h1>${logro.nombre}</h1>
-        <p><strong>Descripción:</strong> ${logro.descripcion}</p>
-        <p class="dificultad"><strong>Dificultad:</strong> ${logro.dificultad}</p>
-        <div class="detalle"><strong>Detalles:</strong> ${logro.detalle}</div>
-    `;
+        const logroHTML = `
+            <img src="${logro.imagen}" alt="Imagen del logro">
+            <h1>${logro.nombre}</h1>
+            <p><strong>Descripción:</strong> ${logro.descripcion}</p>
+            <p class="dificultad"><strong>Dificultad:</strong> ${logro.dificultad}</p>
+            <div class="detalle"><strong>Detalles:</strong> ${logro.detalle}</div>
+        `;
 
-    // Insertar el contenido en el contenedor
-    detalleLogroDiv.innerHTML = logroHTML;
-  })
-  .catch(error => console.error('Error al cargar el detalle del logro:', error));
+        detalleLogroDiv.innerHTML = logroHTML;
+    })
+    .catch(error => {
+        console.error('Error al cargar el detalle del logro:', error);
+        document.getElementById('detalle-logro').innerHTML = `
+            <p>Error al cargar el detalle del logro. Por favor, inténtalo de nuevo más tarde.</p>
+        `;
+    });
