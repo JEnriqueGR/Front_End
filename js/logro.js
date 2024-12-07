@@ -29,12 +29,14 @@ async function cargarLogro() {
 // Función para mostrar los detalles del logro en la página
 function mostrarDetalleLogro(logro) {
     detalleLogro.innerHTML = `
-        <h2>${logro.nombre}</h2>
-        <img src="${logro.imagen}" alt="${logro.nombre}">
-        <p><strong>Descripción:</strong> ${logro.descripcion}</p>
-        <p><strong>Estado:</strong> ${logro.estado ? 'Completado' : 'Pendiente'}</p>
-        <p><strong>Detalles:</strong> ${logro.detalle || 'No hay detalles disponibles'}</p> <!-- Usar "detalle" -->
-        <button onclick="volverAtras()">Volver</button>
+        <div class="detalle-card">
+            <img src="${logro.imagen}" alt="${logro.nombre}">
+            <h2>${logro.nombre}</h2>
+            <p><strong>Descripción:</strong> ${logro.descripcion}</p>
+            <p><strong>Estado:</strong> ${logro.estado ? 'Completado' : 'Pendiente'}</p>
+            <p><strong>Detalles:</strong> ${logro.detalle || 'No hay detalles disponibles'}</p>
+            <button onclick="volverAtras()">Volver</button>
+        </div>
     `;
 }
 

@@ -1,38 +1,66 @@
+/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #fff3e0;
+    background-color: #121212; /* Fondo oscuro */
+    color: #ffffff; /* Texto blanco */
 }
 
 header {
     text-align: center;
     padding: 20px;
-    background-color: #ff9800;
-    color: white;
+    background-color: #1f1f1f; /* Fondo más oscuro */
+    color: #ffffff;
 }
 
 #detalle-logro {
-    max-width: 600px;
-    margin: 50px auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Estilo del detalle del logro */
+.detalle-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1f1f1f;
+    border: 1px solid #333;
     border-radius: 8px;
-    background-color: white;
-    text-align: center;
+    padding: 20px;
+    width: 60%;
 }
 
-#detalle-logro h2 {
+.detalle-card img {
+    width: 150px; /* Imagen del logro */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.detalle-card h2 {
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    margin: 0;
 }
 
-#detalle-logro img {
-    width: 100px;
-    margin: 20px 0;
-}
-
-#detalle-logro p {
+.detalle-card p {
     font-size: 1rem;
-    line-height: 1.5;
+    margin: 10px 0;
+}
+
+.detalle-card button {
+    background-color: #6200ea; /* Botón púrpura */
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.detalle-card button:hover {
+    background-color: #3700b3; /* Color más oscuro al pasar el mouse */
 }
