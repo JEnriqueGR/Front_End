@@ -1,9 +1,9 @@
 const detalleLogro = document.getElementById('detalle-logro');
-const logroId = new URLSearchParams(window.location.search).get('logroId');
+const id = new URLSearchParams(window.location.search).get('id');  // Cambié 'logroId' por 'id'
 
 async function cargarLogro() {
   try {
-    const respuesta = await fetch(`https://backend-production-4746.up.railway.app/logros/${logroId}`);
+    const respuesta = await fetch(`https://backend-production-4746.up.railway.app/logros/${id}`);  // Cambié 'logroId' por 'id'
     if (!respuesta.ok) {
       throw new Error(`Error al obtener el logro: ${respuesta.status}`);
     }
