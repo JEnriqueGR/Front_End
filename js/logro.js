@@ -33,7 +33,7 @@ function mostrarDetalleLogro(logro) {
         <img src="${logro.imagen}" alt="${logro.nombre}">
         <p><strong>Descripción:</strong> ${logro.descripcion}</p>
         <p><strong>Estado:</strong> ${logro.estado ? 'Completado' : 'Pendiente'}</p>
-        <p><strong>Detalles:</strong> ${logro.detalles || 'No hay detalles disponibles'}</p>
+        <p><strong>Detalles:</strong> ${logro.detalle || 'No hay detalles disponibles'}</p> <!-- Usar "detalle" -->
         <button onclick="volverAtras()">Volver</button>
     `;
 }
@@ -45,4 +45,3 @@ function volverAtras() {
 
 // Cargar el logro
 cargarLogro();
-
