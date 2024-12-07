@@ -1,3 +1,6 @@
+// Asegúrate de que el elemento existe en la página
+const detalleLogro = document.getElementById('detalle-logro');
+
 // Obtener el ID del logro desde la URL
 const params = new URLSearchParams(window.location.search);
 const logroId = params.get('logroId'); // Aquí obtienes el valor de logroId
