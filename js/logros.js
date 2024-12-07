@@ -60,7 +60,7 @@ function cambiarEstado(logroId, nuevoEstado) {
     .catch(error => console.error('Error:', error));
 }
 
-// Función para ver los detalles del logro
+
 function verDetalles(logroId) {
-  window.location.href = `logro.html?logroId=${logroId}`;
-}
+    window.location.href = `logro.html?logroId=${logroId}`;
+  }
