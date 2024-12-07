@@ -1,49 +1,23 @@
-const detalleLogro = document.getElementById('detalle-logro');
+// Obtener el ID del logro desde la URL
+const params = new URLSearchParams(window.location.search);
+const logroId = params.get('logroId');
 
-// Obtener el logroId de la URL
-const logroId = new URLSearchParams(window.location.search).get('logroId');
+// Obtener los detalles del logro desde el backend y mostrar en la página
+fetch(`https://backend-production-4746.up.railway.app/logro/${logroId}`)
+  .then(response => response.json())
+  .then(logro => {
+    // Crear el HTML para mostrar los detalles del logro
+    const detalleLogroDiv = document.getElementById('detalle-logro');
 
-// Función para cargar el detalle del logro
-async function cargarLogro() {
-    if (!logroId) {
-        detalleLogro.innerHTML = `<p>No se ha proporcionado un ID de logro válido.</p>`;
-        return;
-    }
-
-    try {
-        // Realizar la solicitud al backend con el logroId
-        const respuesta = await fetch(`https://backend-production-4746.up.railway.app/logros/${logroId}`);
-        if (!respuesta.ok) {
-            throw new Error(`Error al obtener el logro: ${respuesta.status}`);
-        }
-        // Convertir la respuesta en formato JSON
-        const logro = await respuesta.json();
-        // Mostrar el detalle del logro
-        mostrarDetalleLogro(logro);
-    } catch (error) {
-        console.error(error);
-        detalleLogro.innerHTML = `<p>Error al cargar el logro. Inténtalo más tarde.</p>`;
-    }
-}
-
-// Función para mostrar los detalles del logro en la página
-function mostrarDetalleLogro(logro) {
-    detalleLogro.innerHTML = `
-        <div class="detalle-card">
-            <img src="${logro.imagen}" alt="${logro.nombre}">
-            <h2>${logro.nombre}</h2>
-            <p><strong>Descripción:</strong> ${logro.descripcion}</p>
-            <p><strong>Estado:</strong> ${logro.estado ? 'Completado' : 'Pendiente'}</p>
-            <p><strong>Detalles:</strong> ${logro.detalle || 'No hay detalles disponibles'}</p>
-            <button onclick="volverAtras()">Volver</button>
-        </div>
+    const logroHTML = `
+        <img src="${logro.imagen}" alt="Imagen del logro">
+        <h1>${logro.nombre}</h1>
+        <p><strong>Descripción:</strong> ${logro.descripcion}</p>
+        <p class="dificultad"><strong>Dificultad:</strong> ${logro.dificultad}</p>
+        <div class="detalle"><strong>Detalles:</strong> ${logro.detalle}</div>
     `;
-}
 
-// Función para volver a la página anterior
-function volverAtras() {
-    window.history.back();
-}
-
-// Cargar el logro
-cargarLogro();
+    // Insertar el contenido en el contenedor
+    detalleLogroDiv.innerHTML = logroHTML;
+  })
+  .catch(error => console.error('Error al cargar el detalle del logro:', error));
