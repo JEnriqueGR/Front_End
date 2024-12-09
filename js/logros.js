@@ -2,7 +2,7 @@
 const params = new URLSearchParams(window.location.search);
 const juegoId = params.get('juegoId');
 
-// Obtener los logros del backend y renderizarlos en la página
+// Obtener los logros del backend y ponerlos en la página
 fetch(`https://backend-production-4746.up.railway.app/logros/${juegoId}`)
   .then(response => response.json())
   .then(logros => {
@@ -51,7 +51,7 @@ function cambiarEstado(logroId, nuevoEstado) {
       return response.json();
     })
     .then(() => {
-      // Actualizar el estado visualmente sin recargar la página
+      // Actualizar el estado visualmente
       const iconoEstado = document.querySelector(`img[onclick="cambiarEstado(${logroId}, ${nuevoEstado})"]`);
       iconoEstado.src = nuevoEstado
         ? 'https://www.iconpacks.net/icons/2/free-check-icon-3278-thumb.png'

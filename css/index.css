@@ -16,7 +16,7 @@ header {
 
 #juegos-lista {
     display: flex;
-    flex-direction: column; /* Columnas para alinear como la imagen */
+    flex-direction: column;
     gap: 20px;
     padding: 20px;
 }
@@ -31,11 +31,11 @@ header {
     padding: 20px;
     background-color: #1f1f1f;
     height: auto; /* Ajustar altura dinámica */
-    position: relative; /* Para posicionar la imagen de plataforma */
+    position: relative;
 }
 
 .juego-card img {
-    width: 120px; /* Imagen del juego más grande */
+    width: 120px;
     height: auto;
     margin-right: 20px;
 }
@@ -51,13 +51,13 @@ header {
 /* Título del juego */
 .juego-card h3 {
     font-size: 1.2rem;
-    margin: 0; /* Eliminar márgenes */
+    margin: 0; 
 }
 
 /* Barra de progreso */
 .barra-progreso {
     width: 100%;
-    height: 12px; /* Altura de la barra */
+    height: 12px; 
     background-color: #333333; /* Fondo de la barra */
     border-radius: 5px;
     overflow: hidden;
@@ -65,7 +65,7 @@ header {
 
 .progreso {
     height: 100%;
-    background-color: #76ff03; /* Color verde */
+    background-color: #76ff03; /* Color para el progreso */
 }
 
 /* Botón */
@@ -74,7 +74,7 @@ header {
 }
 
 .botones button {
-    background-color: #6200ea; /* Botón púrpura */
+    background-color: #6200ea; 
     color: #ffffff;
     border: none;
     padding: 8px 12px;
